@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { ListOfAIOSComponent } from './listOfAIOS/listOfAIOS.component';
+import { ListOfProceduresComponent } from './listOfProcedures/listOfProcedures.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
       children: [
 
         { path: 'listOfAIOS', component: ListOfAIOSComponent },
+        { path: 'listOfProcedures', component: ListOfProceduresComponent },
          
       /*  { path: 'profile', component: ProfileComponent, resolve: { user: ProfileResolver }, canDeactivate: [PreventUnsavedChanges] },
           { path: 'surgeon', component: SurgeonComponent },

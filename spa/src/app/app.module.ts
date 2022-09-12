@@ -18,13 +18,14 @@ import { AuthGuard } from './_guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ListOfAIOSComponent } from './listOfAIOS/listOfAIOS.component';
+import { ListOfProceduresComponent } from './listOfProcedures/listOfProcedures.component';
 
 
 
 export function tokenGetter() { return localStorage.getItem('token'); }
 
 @NgModule({
-   declarations: [	
+   declarations: [		
       AppComponent,
       HomeComponent,
       AboutComponent,
@@ -32,7 +33,8 @@ export function tokenGetter() { return localStorage.getItem('token'); }
       SettingsComponent,
       RegisterComponent,
       LoginComponent,
-      ListOfAIOSComponent
+      ListOfAIOSComponent,
+      ListOfProceduresComponent
    ],
    imports: [
       HttpClientModule,

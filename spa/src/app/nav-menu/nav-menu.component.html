@@ -8,13 +8,15 @@
       
         <ul class="navbar-nav flex-grow">
           <li class="nav-item" >
-            <a class="nav-link text-dark" routerLink="/">Home</a> 
+            <a class="nav-link text-dark" routerLink="/home">Home</a> 
          </li>
          
           <li class="nav-item"  *ngIf="loggedIn()"> 
             <a class="nav-link text-dark" routerLink="/listOfAIOS">Trainees</a> 
           </li>
-         
+          <li class="nav-item"  *ngIf="loggedIn()"> 
+            <a class="nav-link text-dark" routerLink="/listOfProcedures">Trainee Procedures</a> 
+          </li>
          
           <li class="nav-item"  > 
             <a class="nav-link text-dark" routerLink="/about">About</a> 
