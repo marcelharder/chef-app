@@ -31,7 +31,7 @@ changeCurrentSerial(sh: string) { this.SerialNumber.next(sh); }
 changeCurrentRole(sh: string) { this.UserRole.next(sh); }
 
 login(model: any) {
-    return this.http.post(this.baseUrl + 'auth/login', model).pipe(
+    return this.http.post(this.baseUrl + 'account/login', model).pipe(
         map((response: any) => {
             const r = response;
             if (releaseEvents) {
@@ -43,9 +43,9 @@ login(model: any) {
     );
 }
 
-register(model: any) { return this.http.post(this.baseUrl + 'auth/register', model); }
+register(model: any) { return this.http.post(this.baseUrl + 'account/register', model); }
 
-updatePassword(model: any) { return this.http.put(this.baseUrl + 'auth/changePassword', model); }
+updatePassword(model: any) { return this.http.put(this.baseUrl + 'account/changePassword', model); }
 
 loggedIn() {
     const token = localStorage.getItem('token');
