@@ -31,12 +31,6 @@ export class NavMenuComponent implements OnInit {
     
     loggedIn() { return this.auth.loggedIn(); }
 
-    adminLogged(){
-        let currentRole = "";
-        this.auth.UserRole.subscribe((next)=>{
-            currentRole = next; });
-        if(currentRole === 'admin'){return true;} else {return false;} ;
-    }
 
     logIn(){this.router.navigate(['/login']);}
 

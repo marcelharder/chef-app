@@ -35,8 +35,8 @@ login(model: any) {
         map((response: any) => {
             const r = response;
             if (releaseEvents) {
-                localStorage.setItem('token', r.token);
-                this.decodedToken = this.jwtHelper.decodeToken(r.token);
+                localStorage.setItem('token', r.Token);
+                this.decodedToken = this.jwtHelper.decodeToken(r.Token);
                 console.log(this.decodedToken);
             }
         })
@@ -49,7 +49,9 @@ updatePassword(model: any) { return this.http.put(this.baseUrl + 'account/change
 
 loggedIn() {
     const token = localStorage.getItem('token');
-    return !this.jwtHelper.isTokenExpired(token);
+    if(token !=="undefined"){return !this.jwtHelper.isTokenExpired(token);}
+   return false;
+    
 }
 
 }

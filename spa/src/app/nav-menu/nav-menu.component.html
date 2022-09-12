@@ -4,39 +4,23 @@
   >
     <div class="container">
      
-      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]="{ show: isExpanded }">
-              
-       
-
-      <!--   <div class="dropdown ml-2 mr-2" dropdown>
-          <a class="dropdown-toggle"  dropdownToggle>| Products </a>
-          <div class="dropdown-menu mt-3" *dropdownMenu>
-            <a class="dropdown-item" href="#" [routerLink]="['/companyadmin']">In Hospitals</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" [routerLink]="['/search']">Search on serial#</a>
-          </div>
-        </div> -->
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+      
         <ul class="navbar-nav flex-grow">
-          <li class="nav-item" > 
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a> 
+          <li class="nav-item" >
+            <a class="nav-link text-dark" routerLink="/">Home</a> 
          </li>
-          <li class="nav-item" *ngIf="!adminLogged()"> 
-            <a class="nav-link text-dark" [routerLink]="['/listOfRegistries']">Registries</a> 
+         
+          <li class="nav-item"  *ngIf="loggedIn()"> 
+            <a class="nav-link text-dark" routerLink="/listOfAIOS">Trainees</a> 
           </li>
-          <li class="nav-item" *ngIf="!adminLogged()"> 
-            <a class="nav-link text-dark" [routerLink]="['/']">Statistics (under construction) </a> 
-          </li>
-          <li class="nav-item"  *ngIf="adminLogged()"> 
-            <a class="nav-link text-dark" [routerLink]="['/users']">Users </a> 
-          </li> 
-          <li class="nav-item"  *ngIf="adminLogged()"> 
-            <a class="nav-link text-dark" [routerLink]="['/hospitals']">Hospitals </a> 
-          </li> 
-          <li class="nav-item"  *ngIf="!adminLogged()"> 
-            <a class="nav-link text-dark" [routerLink]="['/about']">About</a> 
+         
+         
+          <li class="nav-item"  > 
+            <a class="nav-link text-dark" routerLink="/about">About</a> 
           </li>
           <li class="nav-item" *ngIf="!loggedIn()"> 
-            <a class="nav-link text-dark" [routerLink]="['/login']">Login</a> 
+            <a class="nav-link text-dark" routerLink="/login">Login</a> 
           </li>
           <li class="nav-item"  *ngIf="loggedIn()"> 
             <a class="nav-link text-dark" (click)="logOut()">Logout</a> 

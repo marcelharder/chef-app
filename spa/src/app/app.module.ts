@@ -9,7 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SettingsComponent } from './settings/settings.component';
-import { StatisticsComponent } from './statistics/statistics.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
@@ -18,21 +17,22 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './_guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { ListOfAIOSComponent } from './listOfAIOS/listOfAIOS.component';
 
 
 
 export function tokenGetter() { return localStorage.getItem('token'); }
 
 @NgModule({
-   declarations: [
+   declarations: [	
       AppComponent,
       HomeComponent,
       AboutComponent,
       NavMenuComponent,
       SettingsComponent,
-      StatisticsComponent,
       RegisterComponent,
-      LoginComponent
+      LoginComponent,
+      ListOfAIOSComponent
    ],
    imports: [
       HttpClientModule,
@@ -44,7 +44,7 @@ export function tokenGetter() { return localStorage.getItem('token'); }
          config: {
              tokenGetter: tokenGetter,
              whitelistedDomains: ['localhost:5000'],
-             blacklistedRoutes: ['localhost:5000/api/auth']
+             blacklistedRoutes: ['localhost:5000/api/account']
          }
      }),
    ],
